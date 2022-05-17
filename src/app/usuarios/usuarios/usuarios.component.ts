@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable} from 'rxjs';
 import { Usuarios } from '../model/usuarios';
+import { UsuariosService } from './../services/usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,13 +10,12 @@ import { Usuarios } from '../model/usuarios';
 })
 export class UsuariosComponent implements OnInit {
 
-  usuarios: Usuarios[] = [
-    {_id: '1',name: 'Davi', email: 'davi@gmail.com'}
-  ];
-  displayedColumns = ['name','email'
-  ]
+  usuarios: Observable<Usuarios[]>;
+  displayedColumns = ['name','email']
 
-  constructor() { }
+  constructor(private usuariosService: UsuariosService) {
+    this.usuarios = this.usuariosService.list();
+  }
 
   ngOnInit(): void {
   }

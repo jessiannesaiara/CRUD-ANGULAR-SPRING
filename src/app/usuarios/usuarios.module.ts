@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,7 +15,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
   imports: [
     CommonModule,
     UsuariosRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpClientModule
 
   ]
 })
