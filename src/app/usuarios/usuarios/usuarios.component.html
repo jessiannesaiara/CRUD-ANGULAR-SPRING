@@ -12,7 +12,10 @@
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let usuarios"> {{ usuarios.name }}</td>
+        <td mat-cell *matCellDef="let usuarios"> {{ usuarios.name }}
+        <mat-icon aria-hidden="false" aria-label="Nome do usuário">{{ usuarios.name | nome }}</mat-icon>
+
+        </td>
       </ng-container>
 
       <!-- Email Column -->
