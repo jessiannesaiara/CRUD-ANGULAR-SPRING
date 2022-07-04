@@ -7,6 +7,7 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'usuarios',
   },
+
   {
     path: 'usuarios',
     loadChildren: () =>
